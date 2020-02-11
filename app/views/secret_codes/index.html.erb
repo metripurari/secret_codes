@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Secret Codes</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Code</th>
+      <th>User</th>
+
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @secret_codes.each do |secret_code| %>
+      <tr>
+        <td><%= secret_code.code %></td>
+        <td><%= secret_code.user_email ? secret_code.user_email : "N/A" %></td>
+
+
+      </tr>
+    <% end %>
+    <tr>
+      <td colspan="2"><%= paginate @secret_codes, theme: 'twitter-bootstrap-4',
+                   pagination_class: "pagination-sm",
+                   nav_class: "d-inline-b" %>
+
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<br>
+
+
